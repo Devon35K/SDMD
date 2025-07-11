@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login - SDMD Equipment Management System</title>
-    <link rel="icon" href="{{ asset('images/mesh_icon.png') }}" sizes="any">
+    <link rel="icon" href="{{ asset('images/icon.png') }}" sizes="any">
 
     <!-- Custom styles for exact colors -->
     <style>
