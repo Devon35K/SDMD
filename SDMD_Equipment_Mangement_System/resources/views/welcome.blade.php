@@ -1,95 +1,85 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-
-
 <head>
-
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login - SDMD Equipment Management System</title>
     <link rel="icon" href="{{ asset('images/icon.png') }}" sizes="any">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Custom styles for exact colors -->
     <style>
-        .bg-gradient-custom {
-            background: linear-gradient(to bottom, #1A2A44, #0F1A2A);
-        }
-        .text-custom-purple {
-            color: #A78BFA;
-        }
-        .bg-custom-purple {
-            background-color: #A78BFA;
-        }
-        .text-custom-dark {
-            color: #1A2A44;
-        }
-        .text-custom-gray {
-            color: #4A4A4A;
-        }
-        .bg-custom-dark {
-            background-color: #1A2A44;
+        body {
+            background-color: #041643;
         }
     </style>
-
-    <!-- Include Vite assets (Tailwind CSS and JS) -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gradient-custom flex flex-col min-h-screen">
-<main class="flex flex-col lg:flex-row items-center justify-center flex-grow p-6">
-    <!-- Left Section -->
-    <div class="flex-1 p-6 relative">
-        <!-- Decorative Circles -->
-        <div class="absolute top-0 left-0 w-64 h-64 bg-custom-purple opacity-20 rounded-full"></div>
-        <div class="absolute top-20 left-20 w-48 h-48 bg-custom-purple opacity-20 rounded-full"></div>
-        <!-- Text -->
+
+<body class="min-h-screen flex flex-col items-center justify-center font-sans">
+
+<div class="flex w-full max-w-6xl mx-auto p-4 min-h-[80vh]">
+    <!-- Left Section (Image + Text) -->
+    <div class="w-1/2 relative flex flex-col justify-center px-8 text-white">
+        <img src="{{ asset('images/backpic.png') }}" alt="Logo" class="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none">
+
         <div class="relative z-10">
-            <h1 class="text-5xl font-bold text-white">Login into <span class="text-custom-purple">your</span> account</h1>
-            <p class="text-lg text-white mt-2">SDMD EQUIPMENT MANAGEMENT SYSTEM</p>
+            <h1 class="text-4xl font-bold leading-snug">
+                Login into <br>
+                <span class="text-cyan-400">your account</span>
+            </h1>
+            <p class="mt-4 text-sm tracking-widest">SDMD Equipment Management System</p>
         </div>
     </div>
 
     <!-- Right Section (Login Form) -->
-    <div class="w-full lg:w-96 p-6">
-        <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mx-auto">
-            <h2 class="text-custom-dark text-2xl font-bold">Hello Back!</h2>
-            <p class="text-custom-dark mt-2">Welcome back!</p>
-            <form class="mt-4">
-                <!-- Email Field -->
+    <div class="w-1/2 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 shadow-xl w-full max-w-sm">
+            <h2 class="text-gray-900 text-xl font-bold">Hello</h2>
+            <p class="text-sm text-gray-600 mb-2 font-semibold">Welcome Back!</p>
+            <h3 class="text-blue-900 text-lg font-semibold mb-4">Login your account</h3>
+
+            <form>
+                <!-- Email -->
                 <div class="mb-4">
-                    <label class="text-custom-gray block text-sm">Email</label>
-                    <input type="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email">
+                    <label class="block text-sm text-gray-700">Email</label>
+                    <input type="email" placeholder="Enter your email"
+                           class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
                 </div>
-                <!-- Password Field -->
+                <!-- Password -->
                 <div class="mb-4">
-                    <label class="text-custom-gray block text-sm">Password</label>
+                    <label class="block text-sm text-gray-700">Password</label>
                     <div class="relative">
-                        <input type="password" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your password">
-                        <span class="absolute right-2 top-1/2 transform -translate-y-1/2 text-custom-gray cursor-pointer">👁️</span>
+                        <input type="password" placeholder="Enter your password"
+                               class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                        <i class='bx bx-hide absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer'></i>
                     </div>
                 </div>
-                <!-- Remember Me and Forgot Password -->
-                <div class="flex justify-between items-center mb-4">
-                    <label class="flex items-center">
-                        <input type="checkbox" class="mr-2">
-                        <span class="text-custom-gray">Remember Me</span>
+                <!-- Remember Me + Forgot Password -->
+                <div class="flex justify-between items-center mb-4 text-sm">
+                    <label class="flex items-center text-gray-600">
+                        <input type="checkbox" class="mr-2"> Remember Me
                     </label>
-                    <a href="#" class="text-custom-gray text-sm underline">Forgot password?</a>
+                    <a href="#" class="text-gray-600 underline">Forgot password?</a>
                 </div>
                 <!-- Login Button -->
-                <button class="w-full py-2 rounded bg-custom-dark text-white">Log In</button>
+                <button type="submit"
+                        class="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 rounded transition">Log in</button>
             </form>
         </div>
     </div>
-</main>
+</div>
 
 <!-- Footer -->
-<footer class="text-center text-white text-sm py-2">
-    COPYRIGHT © 2025 ALL RIGHTS RESERVED. |
-    <a href="#" class="text-white hover:underline">TERMS OF USE</a> |
-    <a href="#" class="text-white hover:underline">PRIVACY POLICY</a>
+<footer class="text-white text-xs text-center mt-6 px-4">
+    Copyright © 2025. All Rights Reserved.
+    <span class="mx-2">|</span>
+    <a href="#" class="hover:underline">Terms of Use</a>
+    <span class="mx-2">|</span>
+    <a href="#" class="hover:underline">Privacy Policy</a>
 </footer>
+
 </body>
+
 </html>
+
