@@ -1,4 +1,8 @@
 SDMD Equipment Management System – Laravel Project Setup Guide
+
+
+
+
 To set up and run the SDMD Equipment Management System, follow the steps below:
 
 First, ensure your system has the necessary prerequisites installed: PHP (version 8.1 or higher), Composer, MySQL or any supported database, and optionally Node.js & NPM if the project involves frontend asset compilation.
