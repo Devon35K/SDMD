@@ -10,105 +10,174 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
         body {
             background-color: #041643;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-
-        .fade-in-image {
-            animation: fadeInUp 1s ease-out forwards;
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-
-        .text-content {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
+        .left-section {
+            flex: 1;
+            position: relative;
+            color: #fff;
+            padding: 40px;
+            text-align: center;
         }
-
-        .text-content h1 {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
+        .left-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.2;
         }
-
-        .text-content p {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.7s forwards;
+        .left-section span {
+            color: #06b6d4;
+        }
+        .left-section p {
+            font-size: 0.875rem;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .login-card h2 {
+            font-size: 1.25rem;
+            color: #1e293b;
+            font-weight: bold;
+        }
+        .login-card p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 5px 0;
+        }
+        .login-card h3 {
+            font-size: 1rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .login-card input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            font-size: 0.875rem;
+        }
+        .login-card .password-container {
+            position: relative;
+        }
+        .login-card .password-container i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            cursor: pointer;
+        }
+        .login-card .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        .login-card button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1e40af;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+        .login-card button:hover {
+            background-color: #1e3a8a;
+        }
+        footer {
+            text-align: center;
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 10px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 5px;
         }
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col items-center justify-center font-sans">
-
-<div class="flex w-full max-w-6xl mx-auto p-4 min-h-[80vh]">
+<body>
+<div class="container">
     <!-- Left Section (Image + Text) -->
-    <div class="w-1/2 relative flex flex-col justify-center px-8 text-white">
-        <img src="{{ asset('images/backpic.png') }}" alt="Logo" class="absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none fade-in-image" style="--tw-bg-opacity: 0.1;">
-
-        <div class="relative z-10 text-content">
-            <h1 class="text-4xl font-bold leading-snug opacity-0">
-                Login into <br>
-                <span class="text-cyan-400">your account</span>
-            </h1>
-            <p class="mt-4 text-sm tracking-widest opacity-0">SDMD Equipment Management System</p>
-        </div>
+    <div class="left-section">
+        <h1>Login into <br><span>your account</span></h1>
+        <p>SDMD Equipment Management System</p>
     </div>
 
     <!-- Right Section (Login Form) -->
-    <div class="w-1/2 flex items-center justify-center">
-        <div class="bg-white rounded-lg p-8 shadow-xl w-full max-w-sm">
-            <h2 class="text-gray-900 text-xl font-bold">Hello</h2>
-            <p class="text-sm text-gray-600 mb-2 font-semibold">Welcome Back!</p>
-            <h3 class="text-blue-900 text-lg font-semibold mb-4">Login your account</h3>
+    <div class="right-section">
+        <div class="login-card">
+            <h2>Hello</h2>
+            <p>Welcome Back!</p>
+            <h3>Login your account</h3>
 
             <form>
                 <!-- Email -->
                 <div class="mb-4">
                     <label class="block text-sm text-gray-700">Email</label>
-                    <input type="email" placeholder="Enter your email"
-                           class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
+                    <input type="email" placeholder="Enter your email">
                 </div>
                 <!-- Password -->
-                <div class="mb-4">
+                <div class="mb-4 password-container">
                     <label class="block text-sm text-gray-700">Password</label>
-                    <div class="relative">
-                        <input type="password" placeholder="Enter your password"
-                               class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-400">
-                        <i class='bx bx-hide absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer'></i>
-                    </div>
+                    <input type="password" placeholder="Enter your password">
+                    <i class='bx bx-hide'></i>
                 </div>
                 <!-- Remember Me + Forgot Password -->
-                <div class="flex justify-between items-center mb-4 text-sm">
-                    <label class="flex items-center text-gray-600">
-                        <input type="checkbox" class="mr-2"> Remember Me
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember Me
                     </label>
-                    <a href="#" class="text-gray-600 underline">Forgot password?</a>
+                    <a href="#">Forgot password?</a>
                 </div>
                 <!-- Login Button -->
-                <button type="submit"
-                        class="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 rounded transition">Log in</button>
+                <button type="submit">Log in</button>
             </form>
         </div>
     </div>
 </div>
 
 <!-- Footer -->
-<footer class="text-white text-xs text-center mt-6 px-4">
-    Copyright © 2025. All Rights Reserved.
-    <span class="mx-2">|</span>
-    <a href="#" class="hover:underline">Terms of Use</a>
-    <span class="mx-2">|</span>
-    <a href="#" class="hover:underline">Privacy Policy</a>
+<footer>
+    Copyright © 2025. All Rights Reserved. | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
 </footer>
-
 </body>
 
 </html>
-
