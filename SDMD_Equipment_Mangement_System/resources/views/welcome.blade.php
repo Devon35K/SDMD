@@ -23,11 +23,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 80vh;
+            min-height: 90vh;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 20px 0;
         }
         .left-section {
             flex: 1;
@@ -36,10 +36,21 @@
             padding: 40px;
             text-align: center;
         }
+        .left-section img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            opacity: 0.3;
+            pointer-events: none;
+        }
         .left-section h1 {
             font-size: 2.5rem;
             font-weight: bold;
             line-height: 1.2;
+            position: relative;
+            z-index: 10;
         }
         .left-section span {
             color: #06b6d4;
@@ -48,6 +59,8 @@
             font-size: 0.875rem;
             margin-top: 10px;
             letter-spacing: 2px;
+            position: relative;
+            z-index: 10;
         }
         .right-section {
             flex: 1;
@@ -137,6 +150,7 @@
 <div class="container">
     <!-- Left Section (Image + Text) -->
     <div class="left-section">
+        <img src="{{ asset('images/backpic.png') }}" alt="Background Image">
         <h1>Login into <br><span>your account</span></h1>
         <p>SDMD Equipment Management System</p>
     </div>
