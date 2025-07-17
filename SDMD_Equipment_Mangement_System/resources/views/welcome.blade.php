@@ -10,8 +10,37 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         body {
             background-color: #041643;
+        }
+
+        .fade-in-image {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .text-content {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .text-content h1 {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .text-content p {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.7s forwards;
         }
     </style>
 </head>
@@ -21,14 +50,14 @@
 <div class="flex w-full max-w-6xl mx-auto p-4 min-h-[80vh]">
     <!-- Left Section (Image + Text) -->
     <div class="w-1/2 relative flex flex-col justify-center px-8 text-white">
-        <img src="{{ asset('images/backpic.png') }}" alt="Logo" class="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none">
+        <img src="{{ asset('images/backpic.png') }}" alt="Logo" class="absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none fade-in-image" style="--tw-bg-opacity: 0.1;">
 
-        <div class="relative z-10">
-            <h1 class="text-4xl font-bold leading-snug">
+        <div class="relative z-10 text-content">
+            <h1 class="text-4xl font-bold leading-snug opacity-0">
                 Login into <br>
                 <span class="text-cyan-400">your account</span>
             </h1>
-            <p class="mt-4 text-sm tracking-widest">SDMD Equipment Management System</p>
+            <p class="mt-4 text-sm tracking-widest opacity-0">SDMD Equipment Management System</p>
         </div>
     </div>
 
